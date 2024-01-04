@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <title>Namaste React</title>
+</head>
+<body>
+    <h1>Hello Top of Root</h1>
+    <div id="root">
+        <h1>Prajakta was here</h1>   
+        <!-- This will be replaced (not appended) by react code of App.js -->
+        <!-- React only works in root id div -->
+        <!-- React is a library not a Framework. It can be specifically work in header or footer -->
+    </div>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- <script>
+        const heading = React.createElement("h1", {}, "Hello World from React");  // job of react
+
+        const root = ReactDOM.createRoot(document.getElementById("root"));    // job of react-dom
+
+        root.render(heading);
+    </script> -->
+
+    <script src="./App.js"></script>
+    <h1>Hello Bottom of Root</h1>
+</body>
+</html>
