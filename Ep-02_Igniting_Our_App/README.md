@@ -1,26 +1,28 @@
-# 1. What is npm (definitely not Node Package Manager) ?
+# 1. What is npm (It **does NOT stand** for Node Package Manager) ?
 Ans - It's a package manager for JavaScript and a default part of the Node.js ecosystem. NPM allows developers to discover, share, and install packages of reusable JavaScript code and manage project dependencies. Actually, NPM originally stood for "Node Package Manager." However, as the NPM ecosystem evolved and expanded beyond Node.js-specific packages, the acronym itself was changed to avoid the sole association with Node.js.
 
 # 2. package.json is a configuration for npm (using npm init).
 
 # 3. What are the different types of Dependencies?
 a. Normal Dependencies (production):
-dependencies includes packages that are necessary for the application to run in production. These packages are required for the application to function properly in its runtime environment.
-Examples: Web frameworks (Express.js), utility libraries (Lodash), database connectors (Mongoose).
+    The ones which our project require in all the phases of the project ie. (used in development and production also). Such dependencies are put into the "dependencies" key of the package.json.
+    Examples: Web frameworks (Express.js), utility libraries (Lodash), database connectors (Mongoose).
 
 b. DevDependencies (development) (use -D to install dev dep):
-devDependencies includes packages that are only needed during the development phase. They are not required for the production runtime of the application.
-Examples: Testing frameworks (Jest, Mocha), build tools (Webpack, Gulp), code linters (ESLint), development utilities.
+    They are the ones which our project requires just in the development phase. Such dependencies are put into the "devDependencies" key of the package.json.
+    Examples: Testing frameworks (Jest, Mocha), build tools (Webpack, Gulp), code linters (ESLint), development utilities.
 
 # 4. What is Bundler (Parcel, Webpack)? Why do we need it?
-Ans. - A bundler in web development is a tool that combines various assets, such as JavaScript files, CSS stylesheets, images, and other resources, into a single or a few optimized files for deployment.
-
-We need a bundler because if we send the entire code as it is, in the form of those multiple js, html, css files, this is really not optimum coz the browser needs to make lots of network calls to fetch all these numberous files. So instead, bundling up the code generates a limited no. of files to be fetched. This makes our app faster and more lightweight.
+  -  Parcel, Webpack, Vite are some of the Bundlers used to bundle the code before building dev and prod build.
+  - A bundler minifies, compresses, bundles up the code before shipping the code to production.
+  - Parcel is a Beast that has many more superpowers as well!! It is really easy-to-configure.
+  - We need a bundler because if we send the entire code as it is, in the form of those multiple js, html, css files, this is really not optimum coz the browser needs to make lots of network calls to fetch all these numberous files. So instead, bundling up the code generates a limited no. of files to be fetched. This makes our app faster and more lightweight.
 
 Popular Bundlers:
 a. Webpack: One of the most popular bundlers that handles module bundling, asset management, and code transformation. 
 b. Parcel: A fast, zero-config bundler that requires minimal setup. Parcel is a Beast that has many more superpowers as well!! It is really easy-to-configure.
 c. Rollup: Known for its focus on ES6 module bundling.
+d. Vite
 
 # 5. What are ^ and ~ symbols?
 Ans. In a package.json file used by Node.js projects, the symbols ^ and ~ are used within the version strings of dependencies to define version ranges. These symbols play a role in determining which versions of a package will be installed when running npm install. It's safe to put ^ symbol bcoz lot of things can break.
@@ -78,20 +80,20 @@ npx - executes a package ( It allows you to run binaries from packages installed
     <!--script type="module" src="./App.js"></script !-->
     Otherwise it will treat is as Normal App.js and import export won't be allowed
 
-# 11. Parcel
+# 11. Superpowers of Parcel
     -   Dev build
-    -   runs local server
+    -   Creating the local server to host the app
     -   HMR - Hot Module Replacement => automatically reloads
     -   File watching Algorithm - written in C++
-    -   Caching - Faster builds
+    -   Caching the App code - Faster builds
     -   Image Optimization
-    -   Minification of files
+    -   Minification of files: **Reducing the file size by removal of extra whitespaces in the code, renaming variables to shorter variable names**
     -   Bundling
-    -   Compress
+    -   Compression: **Applying Compression algorithms like Gzip or Brotli on the minified code**
     -   Consistent Hashing
     -   Code Splitting
     -   Differential Bundling - support older browsers
-    -   Diagnostics
+    -   Better Diagnostics: Provides a **better presentation of errors and warnings in the dev environment** leading to easy diagnostics.
     -   Error Handling
     -   Loads in HTTPs mode using --https
     -   different dev and prod build
@@ -102,6 +104,27 @@ npx - executes a package ( It allows you to run binaries from packages installed
 # build prod
     npx parcel build index.html
     While running this command it gives error because in package.json we have main as App.js. So it confuses and throws error
+
+# 12. What is 'npx'?
+  - npx is a package executer. It is used to execute packages. If the package is not present locally, then it installs prior to the execution.
+
+# 13. What is '.parcel-cache'?
+  - One of the superpowers of Parcel is to do caching. So it Caches the code and places it in the '.parcel-cache' folder.
+  - This provides faster builds to us. Everytime we re-build the app, it takes lesser time than previous build since the code is already cached and only the changes need to be reflected in that code. There is no need to re-build the entire app from scratch
+
+# 14. What is Tree Shaking? [Read More on MDN](https://developer.mozilla.org/en-US/docs/Glossary/Tree_shaking)
+  - In production builds, Parcel tries to analyze all the imports and exports of each module. It sees which module is not reachable and no more required. Then it removes everything that is unused. This is Tree Shaking or Dead-code Elimination.
+  - Tree Shaking is done for both static imports(ie. import <module> from "path") and dynamic imports(ie. import()).
+
+# Important Resources
+  - [Tree Shaking MDN Docs](https://developer.mozilla.org/en-US/docs/Glossary/Tree_shaking)
+
+# 15. Hot Module Replacement(HMR)
+  - **Parcel performs HMR**. It **automatically reloads/refreshes the webpage** whenever we make any changes to our code.
+  - It **rebuilds the app** whenever we make any changes in any file.
+  - It **automatically updates the modules** in the browser at runtime without needing a whole page refresh.
+
+
      
 
 
