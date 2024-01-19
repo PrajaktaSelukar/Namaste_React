@@ -13,7 +13,7 @@ Whenever a State variable updates, react rerenders the component.
    In UI, React creates a Virtual DOM of it. Virtual DOM is representation of actual DOM(tags).
 
 ### Why is React faster?
-   It does effective DOM manipulation because it has Virtual DOM. React can efficiently find the difference between Virtual DOMs and update the UI as it has good dif algo.
+   It does effective DOM manipulation because it has Virtual DOM. React can efficiently find the difference between Virtual DOMs and use Reconciliation algo to update the UI as it has good dif algo.
 
 ### Reconciliation - React fiber architecture [Read More](https://github.com/acdlite/react-fiber-architecture)
    React's reconciliation algorithm, specifically in the context of React Fiber, is an essential part of how React efficiently updates the user interface in response to changes in state or props.
