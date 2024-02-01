@@ -21,8 +21,14 @@
     margin: 10px;
 }
 
-.search {
+.search-filter-box {
+    display: flex;
     padding: 10px;
+}
+
+.filter {
+    margin-left: 10px;
+    cursor: pointer;
 }
 
 .res-card {
@@ -79,6 +85,23 @@
     margin-left:12px;
 }
 
-.filter-btn {
+.shimmer-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+.shimmer-card {
+    width: 200px;
+    height: 400px;
+    margin: 20px;
+    background-color: #f0f0f0;
+}
+
+.login {
+    padding: 0 20px;
     cursor: pointer;
+}
+
+.user-card {
+    padding: 10px;
+    border: 1px solid black;
 }
