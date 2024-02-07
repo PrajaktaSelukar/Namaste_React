@@ -17,7 +17,8 @@
 - JSX lets you put markup into JavaScript. 
 - **Curly braces {}** let you “escape back” into JavaScript so that you can embed some variable from your code.
 - Ex. 
-- <img
+```
+<img
     className="avatar"
     src={user.imageUrl}
     alt={'Photo of ' + user.name}
@@ -25,34 +26,39 @@
         width: user.imageSize,
         height: user.imageSize
     }}
-   />
+/>
+```
 - In the above example, style={{}} is not a special syntax, but a regular {} object inside the style={ } JSX curly braces.
 
 ## Rendering lists
-- const listItems = products.map(product =>
+```
+const listItems = products.map(product =>
     <li key={product.id}>
         {product.title}
     </li>
-    );
+);
 
-    return (
+return (
     <ul>{listItems}</ul>
-    );
+);
+```
 - For each item in a list, you should pass a string or a number (**key**) that uniquely identifies that item among its siblings. 
 - Usually, a key should be coming from your data, such as a database ID. 
 - React uses your keys to know what happened if you later insert, delete, or reorder the items.
 
 ## Responding to events
-    function MyButton() {
-        function handleClick() {
-            alert('You clicked me!');
-        }
-
-        return (
-            <button onClick={handleClick}>
-                Click me
-            </button>
-        );
+```
+function MyButton() {
+    function handleClick() {
+        alert('You clicked me!');
     }
+
+    return (
+        <button onClick={handleClick}>
+            Click me
+        </button>
+    );
+}
+```
 - onClick={handleClick} has **no parentheses** at the end! 
 - Do not call the event handler function: you only need to pass it down.
