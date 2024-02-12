@@ -86,6 +86,7 @@ const AppLayout = () =>{
   - During the execution of a class-based component, we have **5 Lifecycle methods executed in the following order**:
     
     **`constructor()` -> `render()` -> `componentDidMount()` -> `componentDidUpdate()` -> `compononentWillUnmount()`**
+![React Lifecycle Methods Diagram](image.png)
 
 #### 7. What is the use of constructor()?
   - **constructor()**: It is the **1st lifecycle method to be executed as soon as a class component loads/renders/gets instantiated.**
